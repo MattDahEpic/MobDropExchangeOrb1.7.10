@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mobdropexchangeorb",
+  "name": "Mob Drop Exchange Orb",
+  "description": "Turn types of mob drops into others.",
+  "version": "v1.3",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["MattDahEpic"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
