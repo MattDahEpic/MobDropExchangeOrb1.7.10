@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.Level;
 
 public class MusicDisk {
-    static ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb));
+    static ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb),1,32767);
     public MusicDisk () {}
     public static void registerRecipes () {
         if (Config.convertMusicDisks == true) { //if allowed to convert music disks

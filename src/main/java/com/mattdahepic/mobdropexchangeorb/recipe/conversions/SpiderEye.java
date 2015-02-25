@@ -13,7 +13,7 @@ public class SpiderEye {
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spider_eye,2),produce());
     }
     private static Object[] convert() {
-        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb));
+        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb),1,32767);
         ItemStack spider_eye = new ItemStack(Items.spider_eye);
         Object[] recipe = new Object[2];
         recipe[0] = orb;

@@ -13,7 +13,7 @@ public class EnderPearl {
         GameRegistry.addShapelessRecipe(new ItemStack(Items.ender_pearl,2),produce());
     }
     private static Object[] convert () {
-        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb));
+        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb),1,32767);
         ItemStack ender_pearl = new ItemStack(Items.ender_pearl);
         Object[] recipe = new Object[2];
         recipe[0] = orb;

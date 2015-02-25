@@ -29,6 +29,9 @@ public class Config {
     public static int stickEssence = 1;
     public static int sugarEssence = 1;
 
+    public static boolean orbHasDurability = false;
+    public static int orbDurability = 200;
+
     public Config () {}
 
     public static void load (FMLPreInitializationEvent event) {
@@ -73,5 +76,7 @@ public class Config {
         redstoneEssence = config.getInt("redstoneEssence",Configuration.CATEGORY_GENERAL,redstoneEssence,1,8,"Amount of mob essence a redstone is worth.");
         stickEssence = config.getInt("stickEssence",Configuration.CATEGORY_GENERAL,stickEssence,1,8,"Amount of mob essence a stick is worth.");
         sugarEssence = config.getInt("sugarEssence",Configuration.CATEGORY_GENERAL,sugarEssence,1,8,"Amount of mob essence a sugar is worth.");
+        orbHasDurability = config.getBoolean("orbHasDurability",Configuration.CATEGORY_GENERAL,orbHasDurability,"If true, the exchange orb will have limited uses. You must set a durability!");
+        orbDurability = config.getInt("orbDurability",Configuration.CATEGORY_GENERAL,orbDurability,1,999,"The amount of uses an exchange orb has, if durability is turned on.");
     }
 }

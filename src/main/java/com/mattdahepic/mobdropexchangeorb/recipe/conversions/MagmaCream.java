@@ -13,7 +13,7 @@ public class MagmaCream {
         GameRegistry.addShapelessRecipe(new ItemStack(Items.magma_cream,2),produce());
     }
     private static Object[] convert () {
-        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb));
+        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb),1,32767);
         ItemStack magma_cream = new ItemStack(Items.magma_cream);
         Object[] recipe = new Object[2];
         recipe[0] = orb;

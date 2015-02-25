@@ -13,7 +13,7 @@ public class Stick {
         GameRegistry.addShapelessRecipe(new ItemStack(Items.stick,2),produce());
     }
     private static Object[] convert () {
-        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb));
+        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb),1,32767);
         ItemStack arrow = new ItemStack(Items.stick);
         Object[] recipe = new Object[2];
         recipe[0] = orb;

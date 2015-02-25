@@ -4,7 +4,6 @@ import com.mattdahepic.mobdropexchangeorb.MobDropExchangeOrb;
 import com.mattdahepic.mobdropexchangeorb.config.Config;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class BlazeRod {
@@ -14,7 +13,7 @@ public class BlazeRod {
         GameRegistry.addShapelessRecipe(new ItemStack(Items.blaze_rod,2),produce()); //dupilicate blaze rods
     }
     private static Object[] convert () {
-        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb));
+        ItemStack orb = new ItemStack(MobDropExchangeOrb.itemMobDropExchangeOrb.setContainerItem(MobDropExchangeOrb.itemMobDropExchangeOrb),1,32767);
         ItemStack blaze_rod = new ItemStack(Items.blaze_rod);
         Object[] recipe = new Object[2];
         recipe[0] = orb;
