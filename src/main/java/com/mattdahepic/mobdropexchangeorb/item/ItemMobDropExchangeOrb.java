@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 
 public class ItemMobDropExchangeOrb extends Item {
     public ItemMobDropExchangeOrb () {
@@ -24,6 +25,10 @@ public class ItemMobDropExchangeOrb extends Item {
         this.itemIcon = iconRegister.registerIcon("mobdropexchangeorb:mobDropExchangeOrb");
     }
     @Override
+    public IIcon getIconFromDamage (int meta) {
+        return this.itemIcon;
+    }
+    @Override
     public boolean doesContainerItemLeaveCraftingGrid (ItemStack stack) {
         return false;
     }
@@ -34,7 +39,7 @@ public class ItemMobDropExchangeOrb extends Item {
         } else if (Config.orbDurability == 1) {
             return null;
         } else { //infinite, return input
-            return stack;
+            return new ItemStack(this);
         }
     }
 }

@@ -21,7 +21,7 @@ public class MobDropExchangeOrb {
 
     public static final String MODID = "mobdropexchangeorb";
     public static final String NAME = "Mob Drop Exchange Orb";
-    public static final String VERSION = "mc1.7.10-v1.4";
+    public static final String VERSION = "mc1.7.10-v1.4.1";
 
     @SidedProxy(clientSide = "com.mattdahepic.mobdropexchangeorb.client.ClientProxy",serverSide = "com.mattdahepic.mobdropexchangeorb.CommonProxy")
     public static CommonProxy proxy;
