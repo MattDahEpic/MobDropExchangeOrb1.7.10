@@ -9,11 +9,14 @@ import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
 
 public class Config {
+    public static final int MIN = 1;
+    public static final int MAX = 8;
+
+    public static final String CATEGORY_ESSENCE = "essence";
     public static int blazeEssence = 2;
     public static int stringEssence = 1;
     public static int spiderEyeEssence = 2;
     public static int gunpowderEssence = 1;
-    public static boolean convertMusicDisks = true;
     public static int enderPealEssence = 4;
     public static int ghastTearEssence = 3;
     public static int magmaCreamEssence = 2;
@@ -22,6 +25,9 @@ public class Config {
     public static int slimeBallEssence = 1;
     public static int rottenFleshEssence = 1;
 
+    public static boolean convertMusicDisks = true;
+
+    public static final String CATEGORY_WITCH = "witch";
     public static boolean convertWitchDrops = true;
     public static int glassBottleEssence = 1;
     public static int glowstoneEssence = 2;
@@ -29,8 +35,10 @@ public class Config {
     public static int stickEssence = 1;
     public static int sugarEssence = 1;
 
+    public static final String CATEGORY_ORB = "orb";
     public static boolean orbHasDurability = false;
     public static int orbDurability = 200;
+    public static boolean orbHardMode = false;
 
     public Config () {}
 
@@ -57,26 +65,30 @@ public class Config {
             syncConfig();
         }
     }
-    public static void processConfig (Configuration config) {
-        blazeEssence = config.getInt("blazeEssence",Configuration.CATEGORY_GENERAL,blazeEssence,1,8,"Amount of mob essence a blaze rod is worth.");
-        stringEssence = config.getInt("stringEssence",Configuration.CATEGORY_GENERAL,stringEssence,1,8,"Amount of mob essence a string is worth.");
-        spiderEyeEssence = config.getInt("spiderEyeEssence",Configuration.CATEGORY_GENERAL,spiderEyeEssence,1,8,"Amount of mob essence a spider eye is worth");
-        gunpowderEssence = config.getInt("gunpowderEssence",Configuration.CATEGORY_GENERAL,gunpowderEssence,1,8,"Amount of mob essence a gunpowder is worth.");
-        convertMusicDisks = config.getBoolean("convertMusicDisks",Configuration.CATEGORY_GENERAL,convertMusicDisks,"Convert music disks with exchange orb?");
-        enderPealEssence = config.getInt("enderPearlEssence",Configuration.CATEGORY_GENERAL,enderPealEssence,1,8,"Amount of mob essence an ender pearl is worth.");
-        ghastTearEssence = config.getInt("ghastTearEssence",Configuration.CATEGORY_GENERAL,ghastTearEssence,1,8,"Amount of mob essence a ghast tear is worth.");
-        magmaCreamEssence = config.getInt("magmaCreamEssence",Configuration.CATEGORY_GENERAL,magmaCreamEssence,1,8,"Amount of mob essence a magma cream is worth.");
-        arrowEssence = config.getInt("arrowEssence",Configuration.CATEGORY_GENERAL,arrowEssence,1,8,"Amount of mob essence an arrow is worth.");
-        boneEssence = config.getInt("boneEssence",Configuration.CATEGORY_GENERAL,boneEssence,1,8,"Amount of mob essence a bone is worth.");
-        slimeBallEssence = config.getInt("slimeBallEssence",Configuration.CATEGORY_GENERAL,slimeBallEssence,1,8,"Amount of mob essence a slime ball is worth.");
-        rottenFleshEssence = config.getInt("rottenFleshEssence",Configuration.CATEGORY_GENERAL,rottenFleshEssence,1,8,"Amount of mob essence a rotten flesh is worth.");
-        convertWitchDrops = config.getBoolean("convertWitchDrops",Configuration.CATEGORY_GENERAL,convertWitchDrops,"Convert witch drops?");
-        glassBottleEssence = config.getInt("glassBottleEssence",Configuration.CATEGORY_GENERAL,glassBottleEssence,1,8,"Amount of mob essence a glass bottle is worth.");
-        glowstoneEssence = config.getInt("glowstoneEssence",Configuration.CATEGORY_GENERAL,glowstoneEssence,1,8,"Amount of mob essence a glowstone is worth.");
-        redstoneEssence = config.getInt("redstoneEssence",Configuration.CATEGORY_GENERAL,redstoneEssence,1,8,"Amount of mob essence a redstone is worth.");
-        stickEssence = config.getInt("stickEssence",Configuration.CATEGORY_GENERAL,stickEssence,1,8,"Amount of mob essence a stick is worth.");
-        sugarEssence = config.getInt("sugarEssence",Configuration.CATEGORY_GENERAL,sugarEssence,1,8,"Amount of mob essence a sugar is worth.");
-        orbHasDurability = config.getBoolean("orbHasDurability",Configuration.CATEGORY_GENERAL,orbHasDurability,"If true, the exchange orb will have limited uses. You must set a durability!");
-        orbDurability = config.getInt("orbDurability",Configuration.CATEGORY_GENERAL,orbDurability,1,999,"The amount of uses an exchange orb has, if durability is turned on.");
+    public static void processConfig (Configuration c) {
+        blazeEssence = c.getInt("blazeEssence",CATEGORY_ESSENCE,blazeEssence,MIN,MAX,"Worth of a blaze rod in essence.");
+        stringEssence = c.getInt("stringEssence",CATEGORY_ESSENCE,stringEssence,MIN,MAX,"Worth of a string in essence.");
+        spiderEyeEssence = c.getInt("spiderEyeEssence",CATEGORY_ESSENCE,spiderEyeEssence,MIN,MAX,"Worth of a spider eye in essence.");
+        gunpowderEssence = c.getInt("gunpowderEssence",CATEGORY_ESSENCE,gunpowderEssence,MIN,MAX,"Worth of a gunpowder in essence");
+        enderPealEssence = c.getInt("enderPearlEssence",CATEGORY_ESSENCE,enderPealEssence,MIN,MAX,"Worth of an ender pearl in essence.");
+        ghastTearEssence = c.getInt("ghastTearEssence",CATEGORY_ESSENCE,ghastTearEssence,MIN,MAX,"Worth of ghast tear in essence.");
+        magmaCreamEssence = c.getInt("magmaCreamEssence",CATEGORY_ESSENCE,magmaCreamEssence,MIN,MAX,"Worth of a magma cream in essence.");
+        arrowEssence = c.getInt("arrowEssence",CATEGORY_ESSENCE,arrowEssence,MIN,MAX,"Worth of an arrow in essence.");
+        boneEssence = c.getInt("boneEssence",CATEGORY_ESSENCE,boneEssence,MIN,MAX,"Worth of a bone in essence.");
+        slimeBallEssence = c.getInt("slimeBallEssence",CATEGORY_ESSENCE,slimeBallEssence,MIN,MAX,"Worth of a slime ball in essence.");
+        rottenFleshEssence = c.getInt("rottenFleshEssence",CATEGORY_ESSENCE,rottenFleshEssence,MIN,MAX,"Worth of a rotten flesh in essence.");
+
+        convertMusicDisks = c.getBoolean("convertMusicDisks",CATEGORY_ESSENCE,convertMusicDisks,"Should music disks be converted between the types?");
+
+        convertWitchDrops = c.getBoolean("convertWitchDrops",CATEGORY_WITCH,convertWitchDrops,"Should witch drops be convertable?");
+        glassBottleEssence = c.getInt("glassBottleEssence",CATEGORY_WITCH,glassBottleEssence,MIN,MAX,"Worth of a glass bottle in essence.");
+        glowstoneEssence = c.getInt("glowstoneEssence",CATEGORY_WITCH,glowstoneEssence,MIN,MAX,"Worth of a glowstone dust in essence.");
+        redstoneEssence = c.getInt("redstoneEssence",CATEGORY_WITCH,redstoneEssence,MIN,MAX,"Worth of a redstone in essence");
+        stickEssence = c.getInt("stickEssence",CATEGORY_WITCH,stickEssence,MIN,MAX,"Worth of a measly stick in essence.");
+        sugarEssence = c.getInt("sugarEssence",CATEGORY_WITCH,sugarEssence,MIN,MAX,"Worth of a sugar in essence");
+
+        orbHasDurability = c.getBoolean("orbHasDurability",CATEGORY_ORB,orbHasDurability,"Does the Mob Drop Exchange Orb have a limited amount of uses?");
+        orbDurability = c.getInt("orbDurability",CATEGORY_ORB,orbDurability,1,999,"Amount of uses the orb has, if enabled.");
+        orbHardMode = c.getBoolean("orbHardMode",CATEGORY_ORB,orbHardMode,"Should the orb require a nether star instead of stone to craft?");
     }
 }

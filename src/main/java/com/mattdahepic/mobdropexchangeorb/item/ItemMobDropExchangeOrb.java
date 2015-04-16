@@ -15,9 +15,19 @@ public class ItemMobDropExchangeOrb extends Item {
         this.setUnlocalizedName("mobDropExchangeOrb");
         this.setMaxStackSize(1);
         this.setCreativeTab(CreativeTabs.tabAllSearch);
+    }
+    @Override
+    public int getMaxDamage () {
         if (Config.orbHasDurability && Config.orbDurability > 1) { //if durability on and not one use
-            this.setMaxDamage(Config.orbDurability-1);
+            return (Config.orbDurability-1);
+        } else {
+            return 0;
         }
+    }
+    @Override
+    public boolean isDamageable () {
+        this.setMaxDamage(0);
+        return Config.orbHasDurability;
     }
     @Override
     @SideOnly(Side.CLIENT)
@@ -33,8 +43,12 @@ public class ItemMobDropExchangeOrb extends Item {
         return false;
     }
     @Override
+    public boolean hasContainerItem (ItemStack item) {
+        return true;
+    }
+    @Override
     public ItemStack getContainerItem (ItemStack stack) {
-        if (isDamageable()) { //if more than one use, but not infinite
+        if (isDamageable() && Config.orbDurability > 1) { //if more than one use, but not infinite
             return new ItemStack(stack.getItem(),1,stack.getItemDamage()+1);
         } else if (Config.orbDurability == 1) {
             return null;

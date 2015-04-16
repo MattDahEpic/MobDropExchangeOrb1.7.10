@@ -1,0 +1,2 @@
+v1.5-mc1.7.10
+Updated to require my core mod and fix config sync issues
